@@ -2,8 +2,6 @@
 for web,
 delete all classes except Body{} and *{}, they can be modified.
  */
-}
-}
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
