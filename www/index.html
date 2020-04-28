@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="css/index_web.css">
+        <title>ZeroHunger</title>
+    </head>
+    <body>
+    <!-- do not delete the below script ^ as it would be useful in the final build of the app() -->
+
+    <script type="text/javascript">
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady(){
+        document.addEventListener("backbutton", onBackKeyDown, false );
+        document.addEventListener("pause", onPause, false);
+        document.addEventListener("resume", onResume, false);
+        console.log("device is ready");
+
+        function onPause() { 
+        }
+
+        function onResume() {
+        }
+
+        function onBackKeyDown() {
+    
+        }
+    }
+    </script>
+    <!-- do not delete the script above , pls comment it out  -->
+
+    <!-- the class welcome_con is just a welcome placeholder, it should be removed before starting anything -->
+    <div class="welcome_con">
+        <h2 class="welcome_header">Welcome To Team-031</h2>
+        <p class="welcome_sub">Solution for Zero Hunger</p>
+        <i class="welcome_sub_detail">Duration : Less than 6 weeks</i>
+        <img src="img/hello.gif" class="welcome_image">
+    </div>
+
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+
