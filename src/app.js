@@ -13,13 +13,13 @@ const port = parseInt(process.env.PORT, 10) || 4500;
 // set up express app
 const app = express();
 
-mongoose.connect("mongodb+srv://htolajide:olajide4me@cluster0-kpchb.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://htolajide:olajide4me@cluster0-kpchb.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() =>{
 	logger.info("Successfully connected to MongoDB Atlas!");
-	}).catch((error) => {
+  }).catch((error) => {
 	  logger.info("Unable to connect to MongoDb Atlas!");
 	  logger.info(error);
-	});
+  });
 
 // to resolve cross origin resource shearing (CORS) error add folowing to te response header 
 app.use((req, res, next) => {

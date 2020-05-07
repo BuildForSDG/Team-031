@@ -7,5 +7,6 @@ export default (app) => {
   }));
 
   app.post('/api/v1/farmer/signup', farmer.signup); // API route for farmer to signup
-  //app.post('/api/v1/farmer/login', Users.login); // API route for user to login
+  app.post('/api/v1/farmer/login', farmer.login); // API route for user to login
+  app.get('/api/v1/farmers', farmer.getAll);
 };
