@@ -3,11 +3,11 @@ import bcrypt from 'bcrypt';
 import configuration from '../config/config.json';
 const Farmer  = require("../models/farmer");
 export default{
-  signup: async (req, res, next) => {
+  signup: async (req, res) => {
 	const farmer = new Farmer({
-	  fullname: req.body.fullname,
-	  email: req.body.email,
-	  password: await bcrypt.hash(req.body.password, 10)	
+        fullname: req.body.fullname,
+        email: req.body.email,
+        password: await bcrypt.hash(req.body.password, 10)	
 	});
 	farmer.save().then( (userData) => {
         const token = jwt.sign({ userId: userData._id }, process.env.SECRET ? process.env.SECRET : configuration.secret);
@@ -23,11 +23,11 @@ export default{
     })
     .catch((error) => {
 			res.status(400).json({
-			  error: error.message
+                error: error.message
 			});
 		});
   },
-  getAll: (req, res, next) => {
+  getAll: (req, res, ) => {
 	Farmer.find().then(
 		(farmers) => {
 			res.status(200).json(farmers);
@@ -38,15 +38,16 @@ export default{
 		});
 	});
   },
-  login: (req, res, next) => {
+  login: (req, res) => {
     const { email, password } = req.body;
 	Farmer.findOne({email}).then(
-	  async (farmer) => {
-        const match = await bcrypt.compare(password, farmer.password);
+        async (farmer) => {
+            const match = await bcrypt.compare(password, farmer.password);
         if (!match) {
-          return res.send({ 
-            status: true,
-            message: 'Login failed, check your password' });
+            return res.status(401).send({ 
+                status: false,
+                message: 'Login failed, check your password' 
+            });
         }
         // sign jwt and wrap in a cookie
         const token = jwt.sign({ userId: farmer._id }, process.env.SECRET ? process.env.SECRET : configuration.secret);
@@ -59,10 +60,9 @@ export default{
       })
       .catch(
 		(error) => {
-		  res.status(400).json({
-			error: error.message
-		  });
-		}
-    );
+            res.status(400).json({
+            error: error.message
+        });
+	});
   },
 }

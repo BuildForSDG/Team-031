@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 export default (req, res, next) => {
   const { token } = req.cookies;
-  if (!token) return res.send({
+  if (!token) return res.status(401).send({
     status: 'Error',
     message: 'You have not been authenticated!'
   });
@@ -12,7 +12,7 @@ export default (req, res, next) => {
     req.user = user;
     return next();
   } catch (error) {
-    return res.send({
+    return res.status(401).send({
       message: 'authentication failed',
       data: error,
     });

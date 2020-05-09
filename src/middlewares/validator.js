@@ -1,5 +1,5 @@
 import validationHelpers from '../utilities/validationHelpers';
-import { emailRegex, passwordRegex, articleRegex } from '../utilities/regexen';
+import { emailRegex, passwordRegex, } from '../utilities/regexen';
 
 const { checkForEmptyFields, checkPatternedFields } = validationHelpers;
 
@@ -7,21 +7,18 @@ export default {
   auth: (req, res, next) => {
     const errors = [];
     const {
-      first_name, phone, email, password, bus_desc, bus_name, address,
+      fullname, email, password
     } = req.body;
 
     if (req.path.includes('signup')) {
-      errors.push(...checkForEmptyFields('First Name', first_name));
-      //errors.push(...checkForEmptyFields('Business Name', bus_name));
-      errors.push(...checkForEmptyFields('Phone', phone));
-      //errors.push(...checkForEmptyFields('Business Description', bus_desc));
-      //errors.push(...checkForEmptyFields('Address', address));
+      errors.push(...checkForEmptyFields('Full Name', fullname));
+      errors.push(...checkForEmptyFields('Email', email));
     }
-  //errors.push(...checkPatternedFields('Email address', email, emailRegex));
+    errors.push(...checkPatternedFields('Email address', email, emailRegex));
     errors.push(...checkPatternedFields('Password', password, passwordRegex));
 
     if (errors.length) {
-      return res.jsend.error({
+      return res.status(400).send({
         message: 'Your request contain errors',
         data: errors,
       });
@@ -36,7 +33,7 @@ export default {
     errors.push(...checkForEmptyFields('Product image', imageurl));
 
     if (errors.length) {
-      return res.jsend.error({
+      return res.status(400).send({
         message: 'Your request contain errors',
         data: errors,
       });
@@ -50,6 +47,6 @@ export default {
     const isGreaterThanZero = parsedNumber > 0;
 
     if (isInteger && isGreaterThanZero) return next();
-    return res.jsend.error('ID must be an integer greater than zero');
+    return res.status(400).json('ID must be an integer greater than zero');
   },
 };
