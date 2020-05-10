@@ -1,11 +1,11 @@
 import request from 'supertest';
-const app = require('../app');
+const app = require('../src/app');
 
 describe('Testing apis', () => {
   describe('Farmer authentication', () => {
     test('It should test signup', async (done) => {
       const user = {
-        email: 'htolajide@yahoo.com', 
+        email: 'olajide@yahoo.com', 
         fullname: 'Hammed Olajide', 
         password: 'olajide',
       };

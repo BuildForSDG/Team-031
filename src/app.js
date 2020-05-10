@@ -3,24 +3,13 @@ import morgan from 'morgan';
 import dotenv from 'dotenv'; // for accessing config in .env file
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-const mongoose  = require("mongoose");
-const logger = require('simple-node-logger').createSimpleLogger();
 import routes from './routes';
+import connectDB from './config/mongoConnect'
 
 dotenv.config();
 
 // set up express app
 const app = express();
-
-const connectDB = async () => {
-await mongoose.connect("mongodb+srv://htolajide:olajide4me@cluster0-kpchb.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() =>{
-	logger.info("Successfully connected to MongoDB Atlas!");
-  }).catch((error) => {
-    logger.info("Unable to connect to MongoDb Atlas!");
-	logger.info(error);
-  });
-}
 
 // to resolve cross origin resource shearing (CORS) error add folowing to te response header 
 app.use((req, res, next) => {
