@@ -18,14 +18,17 @@ const sendEmail = async (email) => {
         subject: 'Sending Email using Node.js',
         text: 'Your accout is succesfully created at Zero Hunger'
     };
-
-    await transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            logger.error(error.message);
-        } else {
-            logger.info('Email sent: ' + info.response);
-        }
-    });
+    try{
+        await transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                logger.error(error.message);
+            } else {
+                logger.info('Email sent: ' + info.response);
+            }
+        });
+    }catch(error){
+        logger.error(error.message)
+    }
 }
 
 module.exports = sendEmail;

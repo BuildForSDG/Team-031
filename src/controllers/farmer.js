@@ -13,7 +13,7 @@ export default{
     });
     Farmer.findOne({email: email}).then( (result) => {
         if (result){
-            return res.status(200).json({status: 'Request Failed', message: "Email already exists"})
+            return res.status(403).json({status: 'Request Failed', message: "Email already exists"})
         }
         farmer.save().then( (userData) => {
             const token = jwt.sign({ userId: userData._id }, process.env.SECRET ? process.env.SECRET : configuration.secret);
@@ -51,7 +51,7 @@ export default{
 	Farmer.findOne({email}).then(
         async (farmer) => {
             if (!farmer)
-            return res.status(200).json({status: 'Request failed', message: 'Email is not recognized'});
+            return res.status(404).json({status: 'Request failed', message: 'Email is not recognized'});
             const match = await bcrypt.compare(password, farmer.password);
             if (!match) {
                 return res.status(401).send({ 
