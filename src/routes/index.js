@@ -1,6 +1,7 @@
 import farmer from '../controllers/farmer';
 import authenticator from '../middlewares/authenticator'
 import validator from '../middlewares/validator';
+import location from '../controllers/location';
 
 export default (app) => {
   app.get('/api', (req, res) => res.status(200).send({
@@ -12,4 +13,5 @@ export default (app) => {
   app.patch('/api/v1/farmer/reset/password', validator.auth, farmer.resetPassword); // API route for farmer reset password
   app.get('/api/v1/farmers', authenticator, farmer.getAll); // Api route for listing farmers
   app.delete('/api/v1/farmer/all/delete', farmer.deleteAll); // API route for user to login
+  app.get('/api/v1/user/location', location.getLocation); 
 };
