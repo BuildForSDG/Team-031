@@ -4,7 +4,7 @@ import dotenv from 'dotenv'; // for accessing config in .env file
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import routes from './routes';
-import connectDB from './config/mongoConnect'
+import connectDB from './config/mongoConnect';
 
 dotenv.config();
 
@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 connectDB();
+
 routes(app);
 app.get('*', (req, res) => { res.end('Zero Hunger Backend!!!'); });
 //app.listen(port, () => logger.info(`Zero hunger ready at ${port}`));

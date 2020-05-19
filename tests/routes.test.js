@@ -25,8 +25,8 @@ describe('Testing apis', () => {
     });
     test('It should test login', async (done) => {
       const user = {
-        email: 'olajide@yahoo.com', 
-        password: 'olajide4real',
+        email: 'htolajide@yahoo.com', 
+        password: 'olajide4me',
       };
       try{
         const response = await request(app).post('/api/v1/farmer/login').send(user);
@@ -50,5 +50,69 @@ describe('Testing apis', () => {
         logger.error(error.message);
       }
     });
+  })
+  describe("Tests Location api", () => {
+    test('Should return location object', async (done) => {
+      const response = await request(app).get('/api/v1/user/location');
+      expect(response.statusCode).toBe(200);
+      done();
+    })
+  })
+
+  describe("Tests Farmer Products", () => {
+    test('Should test farmer add product', async (done) => {
+      const product = {
+        name: 'rice',
+        unit: 'bag',
+        quantity: 50,
+        price: 16500
+      }
+      const response = await request(app).post('/api/v1/farmer/product/add').send(product);
+      expect(response.statusCode).toBe(201);
+      done();
+    })
+
+    test('Should test farmer edit product', async (done) => {
+      const product = {
+        name: 'rice',
+        unit: 'bag',
+        quantity: 50,
+        price: 17500
+      }
+      const product_id = 'eb806670265aa310c864fde';
+      const response = await request(app).patch(`/api/v1/farmer/product/${product_id}/edit`).send(product);
+      expect(response.statusCode).toBe(201);
+      done();
+    })
+  })
+  describe("Product Api", () => {
+    test('Should test product addition', async (done) => {
+      const name = {
+        name: 'corn'
+      }
+      const response = await request(app).post('/api/v1/product/add').send(name);
+      expect(response.statusCode).toBe(201);
+      done();
+    })
+    test('Should return list of products', async (done) => {
+      const response = await request(app).get('/api/v1/products');
+      expect(response.statusCode).toBe(200);
+      done();
+    })
+  })
+  describe("Unit Api", () => {
+    test('Should test unit addition', async (done) => {
+      const name = {
+        name: 'basket'
+      }
+      const response = await request(app).post('/api/v1/unit/add').send(name);
+      expect(response.statusCode).toBe(201);
+      done();
+    })
+    test('Should return list of units', async (done) => {
+      const response = await request(app).get('/api/v1/units');
+      expect(response.statusCode).toBe(200);
+      done();
+    })
   })
 })
