@@ -37,4 +37,12 @@ openTraders=()=>
 {
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
+closeBooking=()=>
+{
+	document.getElementById("place_order").style.marginLeft="100vw";
+}
+openBooking=()=>
+{
+	document.getElementById("place_order").style.marginLeft="0vw";
+}
 //this are all placeholders, pls clear all.
