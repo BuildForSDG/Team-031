@@ -122,7 +122,7 @@ increment=(x)=>
 	//increase price
 	var a=document.getElementById(x).value;
 	//convert to integar
-	a=parseInt(a);
+	a=parseInt(a,10);
 	//return increment
 	document.getElementById(x).value=a+5;
 }
@@ -131,7 +131,7 @@ decrement=(x)=>
 	//increase price
 	var a=document.getElementById(x).value;
 	//convert to integar
-	a=parseInt(a);
+	a=parseInt(a,10);
 	//return decrement
 	if(a===0)
 	{

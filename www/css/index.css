@@ -10,17 +10,16 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    /*background-color:#E4E4E4;*/
+    /* background-color:#E4E4E4; */
     background-color:#fff;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    /* background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%); */
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:12px;
     height:100vh;
-    margin:0px;
-    padding:0px;
+    margin:0;
+    padding:0;
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
-    
     width:100%;
 }
 .welcome_con
@@ -35,7 +34,6 @@ body {
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-
     display: none;
 
 }
@@ -105,7 +103,6 @@ body {
     align-items: center;
     flex-direction: column;
     border-bottom:none;
-
     transition: border 0.1s;
 }
 /*.menu_box:hover
@@ -282,7 +279,7 @@ body {
     align-items: center;
     flex-direction: column;
     background: #fff;
-    /*display: none;*/   
+    /* display: none; */   
 }
 #register_page
 {
@@ -320,10 +317,7 @@ body {
 {
     width:98vw;
     height:6vh;
-    padding-top:1vh;
-    padding-bottom: 1vh;
-    padding-left:1vw;
-    padding-right: 1vw;
+    padding:1vh;
     background:#fff;
     display: flex;
     align-items: center;
