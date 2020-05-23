@@ -6,7 +6,7 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <link rel="stylesheet" type="text/css" href="css/index.css">
-        <!-- <link rel="styleshseet" type="text/css" media="screen and (min-width: 480px)" href="css/index_web.css"> -->
+        <link rel="stylesheet" type="text/css" media="screen and (min-width: 480px)" href="css/index_web.css">
         <title>ZeroHunger</title>
     </head>
     <body>
@@ -54,7 +54,7 @@
                 <input  type="text" placeholder="Email">   
             </div>
             <div class="input_">  
-                <input  type="text" placeholder="Password">   
+                <input  type="Password" placeholder="Password">   
             </div>
             <button class="btn_larger">Sign in</button>
         
@@ -70,7 +70,7 @@
                 <input  type="text" placeholder="Full name">   
             </div>
             <div class="input_">  
-                <input  type="text" placeholder="Password">   
+                <input  type="Password" placeholder="Password">   
             </div>
             <button class="btn_larger">Register</button>
             <button class="btn_larger" style="background: #d14b72;" onclick=closeRegister()>Cancel</button>
@@ -176,25 +176,9 @@
         <div class="header">
             <img src="img/sun.png" class="logo">
         </div>
+
         <div class="container">
-            <div class="container_header">
-                <div class="menu_box" id="buy_nav" onclick=nav("buy")>
-                    <img src="img/icons/buy.svg" class="menu_box_icon">
-                    <p class="menu_box_text">Buy</p>
-                </div>
-                <div class="menu_box" id="sell_nav" onclick=nav("sell")>
-                    <img src="img/icons/sell.svg" class="menu_box_icon">
-                    <p class="menu_box_text">Sell</p>
-                </div>
-                <div class="menu_box" id="Mystore_nav" onclick=nav("Mystore")>
-                    <img src="img/icons/store.svg" class="menu_box_icon">
-                    <p class="menu_box_text">My Store</p>
-                </div>
-                <div class="menu_box" id="more_nav" onclick=nav("more")>
-                    <img src="img/icons/more.svg" class="menu_box_icon">
-                    <p class="menu_box_text">More</p>
-                </div>
-            </div>
+            
 
             <!-- body content goes in content_box -->
             
@@ -206,6 +190,11 @@
                 <div class="content_box">
                     <img src="img/food/tomato.png" class="item_image">
                     <h2 class="title_small">Tomatoes</h2>
+                    <button class="btn" onclick=openTraders()>select</button>
+                </div>
+                <div class="content_box">
+                    <img src="img/food/snail.png" class="item_image">
+                    <h2 class="title_small">snail</h2>
                     <button class="btn" onclick=openTraders()>select</button>
                 </div>
                 <div class="content_box">
@@ -333,13 +322,33 @@
             </div>
             <div class="content_list_column" id="more_selection" style="display:none;"> 
                 <h1 class="title_bright">More</h1>
-                <div class="content_list">
+                <div class="content_list" style="justify-content: center;">
                     <button class="btn_larger" onclick=openInxdex()>Logout</button>
                 </div>
             </div>
 
 
         </div>
+
+
+        <div class="container_header">
+                <div class="menu_box" id="buy_nav" onclick=nav("buy")>
+                    <img src="img/icons/buy.svg" class="menu_box_icon">
+                    <p class="menu_box_text">Buy</p>
+                </div>
+                <div class="menu_box" id="sell_nav" onclick=nav("sell")>
+                    <img src="img/icons/sell.svg" class="menu_box_icon">
+                    <p class="menu_box_text">Sell</p>
+                </div>
+                <div class="menu_box" id="Mystore_nav" onclick=nav("Mystore")>
+                    <img src="img/icons/store.svg" class="menu_box_icon">
+                    <p class="menu_box_text">My Store</p>
+                </div>
+                <div class="menu_box" id="more_nav" onclick=nav("more")>
+                    <img src="img/icons/more.svg" class="menu_box_icon">
+                    <p class="menu_box_text">More</p>
+                </div>
+            </div>
     </div>
 
 
