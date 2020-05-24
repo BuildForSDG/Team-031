@@ -37,13 +37,11 @@ export default{
                     sendEmail(userData.email);
                 })
                 .catch((error) => {
-                    res.status(400).json({
-                         error: error.message
-                    });
+                    res.status(400).json({status:'Failed', message: error.message})
                 });
             })
         })
-        .catch(error => res.status(400).json({error: error.message}));
+        .catch(error => res.status(400).json({status:'Failed', message: error.message}));
   },
   getAll: (req, res, ) => {
 	Buyer.find().then(
@@ -80,9 +78,7 @@ export default{
       })
       .catch(
 		(error) => {
-            res.status(400).json({
-            error: error.message
-        });
+            res.status(400).json({status:'Failed', message: error.message})
 	});
   },
   resetPassword: (req, res) => {
@@ -100,10 +96,8 @@ export default{
             )}       
     ).catch(
 		(error) => {
-			res.status(400).json({
-				error: error.message
-			});
-		}
+			res.status(400).json({status:'Failed', message: error.message})
+        }
     );
   },
   editBuyer: async (req, res) => {
@@ -111,7 +105,7 @@ export default{
     axios.get(location.url)
     .then(async result => {
         const buyer = new Buyer({
-            _id: req.cookies.farmerid,
+            _id: req.cookies.buyerid,
             fullname: fullname,
             email: email,
             password: await bcrypt.hash(password, 10),
@@ -119,19 +113,17 @@ export default{
             updated_at: new Date()
         });
     
-        Farmer.updateOne({_id: req.cookies.buyerid}, buyer).then( () => {
+        Buyer.updateOne({_id: req.cookies.buyerid}, buyer).then( () => {
             res.status(201).json({
                 status: 'Success',
                 message: 'account successfully updated',
             })
         })
         .catch((error) => {
-            res.status(400).json({
-                 error: error.message
-            });
+            res.status(400).json({status:'Failed', message: error.message}) 
         });
     })
-    .catch(error => res.status(400).json({error: error.message})) 
+    .catch(error => res.status(400).json({status:'Failed', message: error.message}))  
   },
  deleteOne: (req, res) => {
 	Buyer.deleteOne({_id: req.params.id}).then(

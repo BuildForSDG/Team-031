@@ -38,12 +38,16 @@ export default{
                 })
                 .catch((error) => {
                     res.status(400).json({
-                         error: error.message
+                        status: 'Failed',
+                        message: error.message
                     });
                 });
             })
         })
-        .catch(error => res.status(400).json({error: error.message}));
+        .catch(error => res.status(400).json({
+            status: 'Failed', 
+            message: error.message
+        }));
   },
   getAll: (req, res, ) => {
 	Farmer.find().then(
@@ -131,7 +135,7 @@ export default{
             });
         });
     })
-    .catch(error => res.status(400).json({error: error.message})) 
+    .catch(error => res.status(400).json({status:'Failed', message: error.message})) 
   },
  deleteOne: (req, res) => {
 	Farmer.deleteOne({_id: req.params.id}).then(
@@ -262,5 +266,51 @@ export default{
         status:'failed', message: error.message
       })
     )
-}
+  },
+  getSellers: (req, res) => {
+    const ids = []; // store farmer ids
+    const farmers = []; // store farmers
+    const output = []; // store output
+    // get all farmers
+      Farmer.find({city: req.params.city}).then(
+          farmer => {
+              farmer.map( item => {
+                  farmers.push({
+                      farmerid: item._id,
+                      name: item.fullname, 
+                      email: item.email, 
+                      city: item.city 
+                    })
+              })
+          }
+      ).catch(error => res.status(400).json({error: error.message}))
+      // get stock information
+      FarmerStock.find({product_name: req.params.product, location: req.params.city}).then(
+          result => {
+              result.map( item => {
+                  ids.push({ 
+                      farmerid: item.farmer_id, 
+                      product_name: item.product_name, 
+                      price: item.price, 
+                      quantity: item.quantity ,
+                      unit: item.unit,
+                    });
+              })
+
+            // loop through fetched seller/farmer and return name and stock info
+            ids.forEach( id => {
+                let result = farmers.filter( farmer => {
+                    farmer.price = id.price;
+                    farmer.product_name = id.product_name;
+                    farmer.quantity = `${id.quantity} ${id.unit}`
+                    if (farmer.farmerid == id.farmerid ) return farmer
+                })
+                output.push(result[0]);
+            })
+              res.status(200).json({status: 'success', result: output});
+          }
+      )
+      .catch(error => res.status(400).json({status: 'Failed', message: error.message }))
+  }
+
 }

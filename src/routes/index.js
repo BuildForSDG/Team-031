@@ -37,4 +37,5 @@ export default (app) => {
   app.post('/api/v1/unit/add', unit.addUnit);
   app.get('/api/v1/products/', product.getProduct);
   app.get('/api/v1/units/', unit.getUnit);
+  app.get('/api/v1/:city/:product/sellers', farmer.getSellers)
 };
