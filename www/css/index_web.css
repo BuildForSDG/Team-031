@@ -3,7 +3,9 @@ for web,
 delete all classes except Body{} and *{}, they can be modified.
  */
 * {
-  -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0); 
 }
 
 body {
@@ -17,10 +19,12 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
+
   /* Padding to avoid the "unsafe" areas behind notches in the screen */
   padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
   width: 100%;
 }
+
 .welcome_con
 {
   width: 100%;
@@ -35,26 +39,31 @@ body {
   flex-wrap: wrap;
 
 }
+
 .welcome_image
 {
   width: 10vw;
   height: 10vw;
 }
+
 .welcome_header
 {
   font-size: 1vw;
   text-transform: uppercase;
 }
+
 .welcome_sub
 {
   font-size: 1.2vw;
   color: #777;
 }
+
 .welcome_sub_detail
 {
   font-size: 0.8vw;
   color:#999;
 }
+
 /* pages starts here */
 .root
 {
@@ -64,6 +73,7 @@ body {
   position: fixed;
   padding: 0;
   margin: 0;
+
 
 }
 .header
@@ -78,6 +88,7 @@ body {
   justify-content: center;
   flex-direction: row;
 }
+
 .container_header
 {
   width: 6vw;
@@ -94,6 +105,7 @@ body {
   position: fixed;
   bottom: 0;
 }
+
 .menu_box
 {
   width: 6vw;
@@ -107,18 +119,20 @@ body {
   transition: border 0.1s;
   padding: 1vh 0vh;
 }
+
 .menu_box_icon
 {
   width: 4vw;
   height: 3vh;
-
 }
+
 .menu_box_text
 {
   font-size: 1vw;
   margin-top: 1vh;
   color: #999;
 }
+
 .container
 {
   width: 96vw;
@@ -128,6 +142,7 @@ body {
   right: 0;
   overflow-y: scroll;
 }
+
 .btn
 {
   width: 10vw;
@@ -141,10 +156,12 @@ body {
   color: #fff;
   border-radius: 10vw;
 }
+
 .btn:active
 {
   opacity: 0.8;
 }
+
 .btn_larger
 {
   width: 15vw;
@@ -160,21 +177,25 @@ body {
   transition: opacity 0.1s;
   margin: 1vw;
 }
+
 .btn_larger:active
 {
   opacity: 0.8;
 }
+
 .logo
 {
   width: 5vw;
   height: 5vw;
   border-radius: 1.2vw;
 }
+
 .item_image
 {
   width: 3.5vw;
   height: 3.5vw;
 }
+
 .content_list
 {
   width: 90vw;
@@ -187,6 +208,7 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+
 .content_list_column
 {
   width: 96vw;
@@ -200,6 +222,7 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .content_box
 {
   width: 14vw;
@@ -214,6 +237,7 @@ body {
   border-radius: 1vh;
   padding: 1vw;
 }
+
 .content_box_large
 {
   width: 43vw;
@@ -227,6 +251,7 @@ body {
   margin: 1vw;
   border-radius: 1vh;
 }
+
 .title_bright
 {
   font-size: 1vw;
@@ -235,6 +260,7 @@ body {
   padding: 2vw;
   margin-left: 1vw;
 }
+
 .title_small
 {
   font-size: 1vw;
@@ -242,6 +268,7 @@ body {
   text-transform: uppercase;
   padding: 0.5vw;
 }
+
 .sub_title
 {
   font-size: 1vw;
@@ -250,6 +277,7 @@ body {
   padding: 0.5vw;
   margin: 0vw
 }
+
 .full_page
 {
   width: 100vw;
@@ -258,18 +286,20 @@ body {
   position: fixed;
   z-index: 100;
   transition: margin 0.5s;
-  
 }
+
 #select_trader
 {
   z-index: 101;
   margin-left: 100vw;
 }
+
 #place_order
 {
   z-index: 102; 
   margin-left: 100vw;
 }
+
 #index_page
 {
   z-index: 200; 
@@ -279,6 +309,7 @@ body {
   flex-direction: column;
   background: #fff;  
 }
+
 #register_page
 {
   z-index: 202; 
@@ -289,6 +320,7 @@ body {
   background: #fff;
   margin-left: 100vw;
 }
+
 #sign_page
 {
   z-index: 201; 
@@ -297,9 +329,9 @@ body {
   align-items: center;
   flex-direction: column;
   background: #fff;
-  margin-left: 100vw;
-  
+  margin-left: 100vw; 
 }
+
 #loading_page
 {
   z-index: 100; 
@@ -309,8 +341,8 @@ body {
   flex-direction: column;
   background: #fff;
   margin-left: 100vw;
-  
 }
+
 .full_page_header
 {
   width: 99vw;
@@ -323,6 +355,7 @@ body {
   flex-direction: row;
   border-bottom: solid 0.5vw #eee;
 }
+
 .full_page_container
 {
   width: 100vw;
@@ -330,6 +363,7 @@ body {
   background: none;
   overflow-y: scroll;
 }
+
 .full_list
 {
   width: 96vw;
@@ -342,6 +376,7 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
 }
+
 .order_list
 {  
   width: 96vw;
@@ -355,6 +390,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .content_box_sellers
 {
   width: 14vw;
@@ -367,11 +403,13 @@ body {
   border-bottom: solid 0.5vw #eee;
   margin:1vw;
 }
+
 .icon_btn
 {
   width: 2vw;
   height: 2vw;
 }
+
 .pro_pic
 {
   width: 4vw;
@@ -386,10 +424,12 @@ body {
   border-radius: 10vw;
   font-size: 1vw;
 }
+
 .large_image {
   width: 10vw;
   height: 10vw;
 }
+
 .complement_three
 {
   color: #d14b72;
@@ -398,6 +438,7 @@ body {
   padding: 0.5vw;
   margin: 0vw;
 }
+
 .input_
 {
   width: 25vw;
@@ -415,12 +456,14 @@ body {
   border-radius: 10vw;
   border-bottom: solid #eee 0.02vw;
 }
+
 .input_ img
 {
   width: 2vw;
   height: 2vw;
   margin-top: -0.5vw;
 }
+
 .input_ input
 {
   outline: none;
@@ -429,12 +472,14 @@ body {
   text-align: center;
   width: 20vw;
 }
+
 .fancy_form
 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .store_head
 {
   width: 100vw;

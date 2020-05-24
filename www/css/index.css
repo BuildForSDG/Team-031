@@ -171,21 +171,25 @@ body {
   transition: opacity 0.1s;
   margin: 2vw;
 }
+
 .btn_larger:active
 {
   opacity: 0.8;
 }
+
 .logo
 {
   width: 15vw;
   height: 15vw;
   border-radius: 4vw;
 }
+
 .item_image
 {
   width: 15vw;
   height: 15vw;
 }
+
 .content_list
 {
   width: 96vw;
@@ -198,6 +202,7 @@ body {
   justify-content: start;
   flex-wrap: wrap;
 }
+
 .content_list_column
 {
   width: 96vw;
@@ -211,6 +216,7 @@ body {
   align-items: flex-start;
   flex-wrap: wrap;
 }
+
 .content_box
 {
   width: 45vw;
@@ -224,6 +230,7 @@ body {
   margin: 1vw;
   border-radius: 1vh;
 }
+
 .content_box_large
 {
   width: 98vw;
@@ -237,6 +244,7 @@ body {
   margin: 1vw;
   border-radius: 1vh;
 }
+
 .title_bright
 {
   font-size: 4vw;
@@ -244,6 +252,7 @@ body {
   text-transform: uppercase;
   padding: 2vw;
 }
+
 .title_small
 {
   font-size: 3.5vw;
@@ -251,6 +260,7 @@ body {
   text-transform: uppercase;
   padding: 2vw;
 }
+
 .sub_title
 {
   font-size: 3vw;
@@ -259,6 +269,7 @@ body {
   padding: 0.5vw;
   margin: 0vw
 }
+
 .full_page
 {
   width: 100vw;
@@ -267,18 +278,20 @@ body {
   position: fixed;
   z-index: 100;
   transition: margin 0.5s;
-  
 }
+
 #select_trader
 {
   z-index: 101;
   margin-left: 100vw;
 }
+
 #place_order
 {
   z-index: 102; 
   margin-left: 100vw;
 }
+
 #index_page
 {
   z-index: 200; 
@@ -288,6 +301,7 @@ body {
   flex-direction: column;
   background: #fff;  
 }
+
 #register_page
 {
   z-index: 202; 
@@ -298,6 +312,7 @@ body {
   background: #fff;
   margin-left: 100vw;
 }
+
 #sign_page
 {
   z-index: 201; 
@@ -309,6 +324,7 @@ body {
   margin-left: 100vw;
   
 }
+
 #loading_page
 {
   z-index: 100; 
@@ -320,6 +336,7 @@ body {
   margin-left: 100vw;
   
 }
+
 .full_page_header
 {
   width: 98vw;
@@ -332,6 +349,7 @@ body {
   flex-direction: row;
   border-bottom: solid 0.5vw #eee;
 }
+
 .full_page_container
 {
   width: 100vw;
@@ -339,6 +357,7 @@ body {
   background: none;
   overflow-y: scroll;
 }
+
 .full_list
 {
   width: 96vw;
@@ -351,6 +370,7 @@ body {
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .order_list
 {  
   width: 96vw;
@@ -364,6 +384,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .content_box_sellers
 {
   width: 45vw;
@@ -376,11 +397,13 @@ body {
   border-bottom: solid 0.5vw #eee;
   margin:1vw;
 }
+
 .icon_btn
 {
   width: 7vw;
   height: 7vw;
 }
+
 .pro_pic
 {
   width: 15vw;
@@ -394,10 +417,12 @@ body {
   text-transform: uppercase;
   border-radius: 10vw;
 }
+
 .large_image {
   width: 25vw;
   height: 25vw;
 }
+
 .complement_three
 {
   color: #d14b72;
@@ -406,6 +431,7 @@ body {
   padding: 0.5vw;
   margin: 0vw;
 }
+
 .input_
 {
   width: 60vw;
@@ -423,11 +449,13 @@ body {
   border-radius: 10vw;
   border-bottom: solid #eee 0.2vw;
 }
+
 .input_ img
 {
   width: 8vw;
   height: 8vw;
 }
+
 .input_ input
 {
   outline: none;
@@ -435,12 +463,14 @@ body {
   font-size: 3vw;
   text-align: center;
 }
+
 .fancy_form
 {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .store_head
 {
   width: 100vw;
