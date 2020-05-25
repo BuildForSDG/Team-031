@@ -157,7 +157,7 @@ export default{
   },
   buyProduct: (req, res) => {
     const name = req.body.name, unit = req.body.unit, quantity = 
-    req.body.price, farmerid = req.body.farmerid;
+    req.body.quantity, price = req.body.price, farmerid = req.body.farmerid;
     const sales = new Sales({
         buyer_id: req.cookies.buyerid,
         farmer_id: farmerid,

@@ -39,4 +39,4 @@ routes(app);
 app.get('*', (req, res) => { res.end('Zero Hunger Backend!!!'); });
 //app.listen(port, () => logger.info(`Zero hunger ready at ${port}`));
 
-export default app;
+module.exports = app;

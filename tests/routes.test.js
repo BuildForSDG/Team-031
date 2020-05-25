@@ -1,6 +1,6 @@
 import request from 'supertest';
 const logger = require('simple-node-logger').createSimpleLogger();
-import app from '../src/app';
+const app = require('../src/app');
 
 describe('Testing apis', () => {
   describe('Farmer authentication', () => {
@@ -57,17 +57,13 @@ describe('Testing apis', () => {
       }
     });
     test('It should test password reset', async done => {
-      try{
-        const user = {
-          email: 'htolajide@yahoo.com',
-          password: 'olajide4real'
-        };
-        const response = await request(app).patch('/api/v1/farmer/reset/password').send(user);
-        expect(response.statusCode).toBe(201);
-        done();
-      }catch(error){
-        logger.error(error.message);
-      }
+      const user = {
+        email: 'htolajide@yahoo.com',
+        password: 'olajide4real'
+      };
+      const response = await request(app).patch('/api/v1/farmer/reset/password').send(user);
+      expect(response.statusCode).toBe(201);
+      done();
     });
   })
   describe('Buyer APIs', () => {
