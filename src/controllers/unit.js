@@ -3,7 +3,7 @@ import helper from '../utilities/helper'
 
 export default{
     addUnit: (req, res) => {
-        const { name } = req.body;
+        const name = req.body.name;
         const capName = helper.capitalizeWord(name.toLowerCase());
         const unit = new Unit({ name: capName});
         Unit.findOne({name: capName}).then( result => {

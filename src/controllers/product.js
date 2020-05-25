@@ -3,7 +3,7 @@ import helper from '../utilities/helper';
 
 export default{
     addProduct: (req, res) => {
-        const { name } = req.body;
+        const name = req.body.name;
         const capName = helper.capitalizeWord(name.toLowerCase());
         const product = new Product({ name: capName});
         Product.findOne({name: capName}).then( result => {
