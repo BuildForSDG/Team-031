@@ -10,7 +10,8 @@ const FarmerStock = require('../models/farmerStock');
 
 export default{
   signup: (req, res) => {
-    const {fullname, email, password } = req.body;
+    const fullname = req.body.fullname, email = req.body.email, password =
+    req.body.password;
     axios.get(location.url)
         .then( async result => { 
             const buyer = new Buyer({
@@ -55,7 +56,7 @@ export default{
 	});
   },
   login: (req, res) => {
-    const { email, password } = req.body;
+    const email = req.body.email, password  = req.body.password;
 	Buyer.findOne({email}).then(
         async (buyer) => {
             if (!buyer)
@@ -154,7 +155,7 @@ export default{
 	);
   },
   buyProduct: (req, res) => {
-    const { name, unit, quantity, price, farmerid} = req.body;
+    const { name, unit, quantity, price, farmerid } = req.body;
     const sales = new Sales({
         buyer_id: req.cookies.buyerid,
         farmer_id: farmerid,
