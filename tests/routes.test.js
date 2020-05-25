@@ -7,7 +7,7 @@ describe('Testing apis', () => {
     test('It should test signup', async (done) => {
       const user = {
         email: 'htolajide@yahoo.com', 
-        fullname: 'Hammed kabiru', 
+        fullname: 'Hammed kabiru',
         password: 'olajide4me',
       };
       try{
