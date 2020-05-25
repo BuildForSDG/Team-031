@@ -83,7 +83,7 @@ export default{
 	});
   },
   resetPassword: (req, res) => {
-	const { email, password} =  req.body;
+	const email = req.body.name, password =  req.body.password;
 	Buyer.findOne({email: email}).then(
 		async (result) => {
             if (!result) 
@@ -102,7 +102,8 @@ export default{
     );
   },
   editBuyer: async (req, res) => {
-    const {fullname, email, password } = req.body;
+    const fullname = req.body.fullname, email = req.body.email, password = 
+    req.body;
     axios.get(location.url)
     .then(async result => {
         const buyer = new Buyer({
@@ -155,7 +156,8 @@ export default{
 	);
   },
   buyProduct: (req, res) => {
-    const { name, unit, quantity, price, farmerid } = req.body;
+    const name = req.body.name, unit = req.body.unit, quantity = 
+    req.body.price, farmerid = req.body.farmerid;
     const sales = new Sales({
         buyer_id: req.cookies.buyerid,
         farmer_id: farmerid,

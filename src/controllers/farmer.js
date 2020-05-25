@@ -10,7 +10,8 @@ const Sales = require('../models/sales');
 
 export default{
   signup: (req, res) => {
-    const {fullname, email, password } = req.body;
+    const fullname = req.body.fullname, email = req.body.email, password = 
+    req.body.password;
     axios.get(location.url)
         .then( async result => { 
             const farmer = new Farmer({
@@ -61,7 +62,7 @@ export default{
 	});
   },
   login: (req, res) => {
-    const { email, password } = req.body;
+    const email = req.body.email, password = req.body.password;
 	Farmer.findOne({email}).then(
         async (farmer) => {
             if (!farmer)
@@ -166,7 +167,8 @@ export default{
 	);
   },
   addProduct: (req, res) => {
-    const { name, unit, quantity, price } = req.body;
+    const name = req.body.name, unit = req.body.unit, quantity =
+    req.body.quantity, price = req.body.price;
     const farmerid = req.cookies.farmerid;
     axios.get(location.url).then(
         result => {

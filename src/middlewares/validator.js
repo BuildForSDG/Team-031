@@ -40,13 +40,4 @@ export default {
     }
     return next();
   },
-  checkProductIdParams: (req, res, next) => {
-    const { params: { productId } } = req;
-    const parsedNumber = parseInt(productId, 10);
-    const isInteger = Number.isInteger(parsedNumber);
-    const isGreaterThanZero = parsedNumber > 0;
-
-    if (isInteger && isGreaterThanZero) return next();
-    return res.status(400).json('ID must be an integer greater than zero');
-  },
 };
