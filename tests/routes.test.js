@@ -189,25 +189,21 @@ describe('Testing apis', () => {
     })
 
     test('Should test farmer edit product', async (done) => {
-      try{
-        const product = {
-          name: 'beans',
-          unit: 'bag',
-          quantity: 50,
-          price: 17500
-        }
-        const product_id = 'eb806670265aa310c864fde';
-        const response = await request(app).patch(`/api/v1/farmer/product/${product_id}/edit`).send(product);
-        if(response.statusCode !== 201){
-          expect(response.body).toHaveProperty('message');
-          expect(response.statusCode).toBe(401);
-          }else{
-            expect(response.statusCode).toBe(201);
-          }
-          done();
-      }catch(error){
-        logger.error(error.message)
+      const product = {
+        name: 'beans',
+        unit: 'bag',
+        quantity: 50,
+        price: 17500
       }
+      const product_id = 'eb806670265aa310c864fde';
+      const response = await request(app).patch(`/api/v1/farmer/product/${product_id}/edit`).send(product);
+      if(response.statusCode !== 201){
+        expect(response.body).toHaveProperty('message');
+        expect(response.statusCode).toBe(401);
+      }else{
+        expect(response.statusCode).toBe(201);
+      }
+      done();
     })
     test('Should return farmer products', async (done) => {
       const response = await request(app).get('/api/v1/farmer/products');
