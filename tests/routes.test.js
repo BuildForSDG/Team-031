@@ -90,7 +90,7 @@ describe('Testing apis', () => {
       const user = {
         email: 'htolajide@yahoo.com', 
         fullname: 'Hammed kabiru', 
-        password: 'olajide4me',
+        password: 'olajide4real',
       };
       try{
         const response = await request(app).put('/api/v1/buyer/profile/edit').send(user);
@@ -125,6 +125,7 @@ describe('Testing apis', () => {
         password: 'olajide4real'
       };
       const response = await request(app).patch('/api/v1/buyer/reset/password').send(user);
+      expect(response.body.message).toBe('Password successfully reset!');
       expect(response.statusCode).toBe(201);
       done();
     });

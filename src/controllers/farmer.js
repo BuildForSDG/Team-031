@@ -95,7 +95,7 @@ export default{
 	Farmer.findOne({email: email}).then(
 		async (result) => {
             if (!result) 
-            return res.status(200).json({status: 'Failed', message: "Email not recognized"});
+            return res.status(400).json({status: 'Failed', message: "Email not recognized"});
             Farmer.updateOne({email: email}, {password: await bcrypt.hash(password, 10)}).then( 
                 () => {
                     res.status(201).json({
