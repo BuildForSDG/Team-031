@@ -91,11 +91,11 @@ export default{
 	});
   },
   resetPassword: (req, res) => {
-	const { email, password} =  req.body;
+	const email = req.body.email, password = req.body.password;
 	Farmer.findOne({email: email}).then(
 		async (result) => {
             if (!result) 
-            return res.status(200).json({status: 'Failed', message: "Email not recognized"});
+            return res.status(400).json({status: 'Failed', message: "Email not recognized"});
             Farmer.updateOne({email: email}, {password: await bcrypt.hash(password, 10)}).then( 
                 () => {
                     res.status(201).json({
@@ -112,7 +112,8 @@ export default{
     );
   },
   editFarmer: async (req, res) => {
-    const {fullname, email, password } = req.body;
+    const fullname = req.body.fullname, email = req.body.email, password = 
+    req.body.password;
     axios.get(location.url)
     .then(async result => {
         const farmer = new Farmer({
@@ -229,7 +230,8 @@ export default{
       .catch(error => res.status(400).json({status: 'Failed', message: error.message}))
   },
   editProduct: (req, res) => {
-    const { name, unit, quantity, price } = req.body;
+    const name = req.body.name, unit = req.body.unit, quantity = 
+    req.body.quantity, price = req.body.price;
     const farmerid = req.cookies.farmerid;
     axios.get(location.url).then(
         result => {

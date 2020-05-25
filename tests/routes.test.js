@@ -1,6 +1,6 @@
 import request from 'supertest';
 const logger = require('simple-node-logger').createSimpleLogger();
-import app from '../src/app';
+const app = require('../src/app');
 
 describe('Testing apis', () => {
   describe('Farmer authentication', () => {
@@ -57,17 +57,13 @@ describe('Testing apis', () => {
       }
     });
     test('It should test password reset', async done => {
-      try{
-        const user = {
-          email: 'htolajide@yahoo.com',
-          password: 'olajide4real'
-        };
-        const response = await request(app).patch('/api/v1/farmer/reset/password').send(user);
-        expect(response.statusCode).toBe(201);
-        done();
-      }catch(error){
-        logger.error(error.message);
-      }
+      const user = {
+        email: 'htolajide@yahoo.com',
+        password: 'olajide4real'
+      };
+      const response = await request(app).patch('/api/v1/farmer/reset/password').send(user);
+      expect(response.statusCode).toBe(201);
+      done();
     });
   })
   describe('Buyer APIs', () => {
@@ -94,7 +90,7 @@ describe('Testing apis', () => {
       const user = {
         email: 'htolajide@yahoo.com', 
         fullname: 'Hammed kabiru', 
-        password: 'olajide4me',
+        password: 'olajide4real',
       };
       try{
         const response = await request(app).put('/api/v1/buyer/profile/edit').send(user);
@@ -124,17 +120,14 @@ describe('Testing apis', () => {
       }
     });
     test('It should test password reset', async done => {
-      try{
-        const user = {
-          email: 'htolajide@yahoo.com',
-          password: 'olajide4real'
-        };
-        const response = await request(app).patch('/api/v1/buyer/reset/password').send(user);
-        expect(response.statusCode).toBe(201);
-        done();
-      }catch(error){
-        logger.error(error.message);
-      }
+      const user = {
+        email: 'htolajide@yahoo.com',
+        password: 'olajide4real'
+      };
+      const response = await request(app).patch('/api/v1/buyer/reset/password').send(user);
+      expect(response.body.message).toBe('Password successfully reset!');
+      expect(response.statusCode).toBe(201);
+      done();
     });
     test('Should list of buyers', async (done) => {
       const response = await request(app).get('/api/v1/buyers');
@@ -152,25 +145,21 @@ describe('Testing apis', () => {
       done();
     });
     test('It should test buyer buy product', async done => {
-      try{
-        const user = {
-          name: 'Beans',
-          unit: 'Bags',
-          quantity: 5,
-          price: 17500,
-          farmerid: '5eb80f484b7bfb49a8ba45f4'
-        };
-        const response = await request(app).post('/api/v1/buyer/product/buy').send(user);
-        if(response.statusCode !== 201){
-          expect(response.body.message).toBe('You have not been authenticated!');
-          expect(response.statusCode).toBe(401);
-        }else{
-            expect(response.statusCode).toBe(201);
-        }
-        done();
-      }catch(error){
-        logger.error(error.message);
+      const user = {
+        name: 'Beans',
+        unit: 'Bags',
+        quantity: 5,
+        price: 17500,
+        farmerid: '5eb80f484b7bfb49a8ba45f4'
+      };
+      const response = await request(app).post('/api/v1/buyer/product/buy').send(user);
+      if(response.statusCode !== 201){
+        expect(response.body.message).toBe('You have not been authenticated!');
+        expect(response.statusCode).toBe(401);
+      }else{
+          expect(response.statusCode).toBe(201);
       }
+      done();
     });
   })
  
@@ -184,46 +173,38 @@ describe('Testing apis', () => {
 
   describe("Tests Farmer Products", () => {
     test('Should test farmer add product', async (done) => {
-      try{
-        const product = {
-          name: 'beans',
-          unit: 'bags',
-          quantity: 50,
-          price: 16500
-        }
-        const response = await request(app).post('/api/v1/farmer/product/add').send(product);
-        if(response.statusCode !== 201){
-          expect(response.body).toHaveProperty('message');
-          expect(response.statusCode).toBe(401);
-          }else{
-            expect(response.statusCode).toBe(201);
-          }
-          done();
-      }catch(error){
-        logger.error(error.message)
+      const product = {
+        name: 'beans',
+        unit: 'bags',
+        quantity: 50,
+        price: 16500
       }
+      const response = await request(app).post('/api/v1/farmer/product/add').send(product);
+      if(response.statusCode !== 201){
+        expect(response.body).toHaveProperty('message');
+        expect(response.statusCode).toBe(401);
+      }else{
+        expect(response.statusCode).toBe(201);
+      }
+      done();
     })
 
     test('Should test farmer edit product', async (done) => {
-      try{
-        const product = {
-          name: 'beans',
-          unit: 'bag',
-          quantity: 50,
-          price: 17500
-        }
-        const product_id = 'eb806670265aa310c864fde';
-        const response = await request(app).patch(`/api/v1/farmer/product/${product_id}/edit`).send(product);
-        if(response.statusCode !== 201){
-          expect(response.body).toHaveProperty('message');
-          expect(response.statusCode).toBe(401);
-          }else{
-            expect(response.statusCode).toBe(201);
-          }
-          done();
-      }catch(error){
-        logger.error(error.message)
+      const product = {
+        name: 'beans',
+        unit: 'bag',
+        quantity: 50,
+        price: 17500
       }
+      const product_id = 'eb806670265aa310c864fde';
+      const response = await request(app).patch(`/api/v1/farmer/product/${product_id}/edit`).send(product);
+      if(response.statusCode !== 201){
+        expect(response.body).toHaveProperty('message');
+        expect(response.statusCode).toBe(401);
+      }else{
+        expect(response.statusCode).toBe(201);
+      }
+      done();
     })
     test('Should return farmer products', async (done) => {
       const response = await request(app).get('/api/v1/farmer/products');

@@ -83,11 +83,11 @@ export default{
 	});
   },
   resetPassword: (req, res) => {
-	const email = req.body.name, password =  req.body.password;
+	const email = req.body.email, password =  req.body.password;
 	Buyer.findOne({email: email}).then(
 		async (result) => {
             if (!result) 
-            return res.status(200).json({status: 'Failed', message: "Email not recognized"});
+            return res.status(400).json({status: 'Failed', message: "Email not recognized"});
             Buyer.updateOne({email: email}, {password: await bcrypt.hash(password, 10)}).then( 
                 () => {
                     res.status(201).json({
@@ -157,7 +157,7 @@ export default{
   },
   buyProduct: (req, res) => {
     const name = req.body.name, unit = req.body.unit, quantity = 
-    req.body.price, farmerid = req.body.farmerid;
+    req.body.quantity, price = req.body.price, farmerid = req.body.farmerid;
     const sales = new Sales({
         buyer_id: req.cookies.buyerid,
         farmer_id: farmerid,
