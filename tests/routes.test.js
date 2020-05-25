@@ -172,24 +172,20 @@ describe('Testing apis', () => {
 
   describe("Tests Farmer Products", () => {
     test('Should test farmer add product', async (done) => {
-      try{
-        const product = {
-          name: 'beans',
-          unit: 'bags',
-          quantity: 50,
-          price: 16500
-        }
-        const response = await request(app).post('/api/v1/farmer/product/add').send(product);
-        if(response.statusCode !== 201){
-          expect(response.body).toHaveProperty('message');
-          expect(response.statusCode).toBe(401);
-          }else{
-            expect(response.statusCode).toBe(201);
-          }
-          done();
-      }catch(error){
-        logger.error(error.message)
+      const product = {
+        name: 'beans',
+        unit: 'bags',
+        quantity: 50,
+        price: 16500
       }
+      const response = await request(app).post('/api/v1/farmer/product/add').send(product);
+      if(response.statusCode !== 201){
+        expect(response.body).toHaveProperty('message');
+        expect(response.statusCode).toBe(401);
+      }else{
+        expect(response.statusCode).toBe(201);
+      }
+      done();
     })
 
     test('Should test farmer edit product', async (done) => {
