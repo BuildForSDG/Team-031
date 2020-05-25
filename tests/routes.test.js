@@ -120,17 +120,13 @@ describe('Testing apis', () => {
       }
     });
     test('It should test password reset', async done => {
-      try{
-        const user = {
-          email: 'htolajide@yahoo.com',
-          password: 'olajide4real'
-        };
-        const response = await request(app).patch('/api/v1/buyer/reset/password').send(user);
-        expect(response.statusCode).toBe(201);
-        done();
-      }catch(error){
-        logger.error(error.message);
-      }
+      const user = {
+        email: 'htolajide@yahoo.com',
+        password: 'olajide4real'
+      };
+      const response = await request(app).patch('/api/v1/buyer/reset/password').send(user);
+      expect(response.statusCode).toBe(201);
+      done();
     });
     test('Should list of buyers', async (done) => {
       const response = await request(app).get('/api/v1/buyers');
