@@ -139,11 +139,11 @@ export default{
     })
     .catch(error => res.status(400).json({status:'Failed', message: error.message})) 
   },
- deleteOne: (req, res) => {
-	Farmer.deleteOne({_id: req.params.id}).then(
+  deleteAll: (req, res) => {
+	Farmer.deleteMany().then(
 		() => {
 			res.status(200).json({
-				message: "Farmer deleted successfully!"
+				message: "Farmers deleted successfully!"
 			});
         })
         .catch((error) => {
@@ -153,11 +153,11 @@ export default{
 		}
 	);
   },
-  deleteAll: (req, res) => {
-	Farmer.deleteMany().then(
+  deleteOne: (req, res) => {
+	Farmer.deleteOne({_id: req.params.id}).then(
 		() => {
 			res.status(200).json({
-				message: "Farmers deleted successfully!"
+				message: "Farmer deleted successfully!"
 			});
         })
         .catch((error) => {
