@@ -144,25 +144,21 @@ describe('Testing apis', () => {
       done();
     });
     test('It should test buyer buy product', async done => {
-      try{
-        const user = {
-          name: 'Beans',
-          unit: 'Bags',
-          quantity: 5,
-          price: 17500,
-          farmerid: '5eb80f484b7bfb49a8ba45f4'
-        };
-        const response = await request(app).post('/api/v1/buyer/product/buy').send(user);
-        if(response.statusCode !== 201){
-          expect(response.body.message).toBe('You have not been authenticated!');
-          expect(response.statusCode).toBe(401);
-        }else{
-            expect(response.statusCode).toBe(201);
-        }
-        done();
-      }catch(error){
-        logger.error(error.message);
+      const user = {
+        name: 'Beans',
+        unit: 'Bags',
+        quantity: 5,
+        price: 17500,
+        farmerid: '5eb80f484b7bfb49a8ba45f4'
+      };
+      const response = await request(app).post('/api/v1/buyer/product/buy').send(user);
+      if(response.statusCode !== 201){
+        expect(response.body.message).toBe('You have not been authenticated!');
+        expect(response.statusCode).toBe(401);
+      }else{
+          expect(response.statusCode).toBe(201);
       }
+      done();
     });
   })
  
