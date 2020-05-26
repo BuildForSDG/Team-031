@@ -18,7 +18,9 @@ export default{
                 fullname: fullname,
                 email: email,
                 password: await bcrypt.hash(password, 10),
-                city: result.data.city
+                city: result.data.city,
+                created_at: new Date(),
+                updated_at: new Date()
             });
             Farmer.findOne({email: email}).then( (result) => {
                 if (result){
