@@ -155,6 +155,7 @@ function decrement(x)
 var a=1;
 if(a===null)
 {
+	var x="null";
 	decrement(x);
 	increment(x);
 	loader(x);
@@ -169,8 +170,5 @@ if(a===null)
 	openInxdex();
 	closeInxdex();
 }
-else
-{
 
-}
 //add new fuctions / features.
