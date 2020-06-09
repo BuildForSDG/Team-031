@@ -106,7 +106,6 @@ body {
 .menu_box_icon {
   width: 8vw;
   height: 4vh;
-
 }
 
 .menu_box_text {
@@ -292,7 +291,6 @@ body {
   flex-direction: column;
   background: #fff;
   margin-left: 100vw;
-  
 }
 
 #loading_page {
