@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 node_modules
 src/logs
+=======
+.DS_Store
+>>>>>>> master
