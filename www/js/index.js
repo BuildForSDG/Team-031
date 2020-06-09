@@ -1,10 +1,4 @@
-var Team = {
-    name:"Team-031",
-    project:"Zero Hunger",
-    solution:"Unknown",
-    members:9,
-};
-var nav;
+
 nav=(x)=>
 {
 	//screen navigation controls.
@@ -59,68 +53,68 @@ nav=(x)=>
             break;
 	}
 }
-var closeInxdex;
+
 closeInxdex=()=>
 {
 	//closes index screen
 	document.getElementById("index_page").style.marginLeft="-100vw";
 }
-var openInxdex;
+
 openInxdex=()=>
 {
 	//index screen, to select opition to buy or sell prodect.
 	document.getElementById("index_page").style.marginLeft="0vw";
 	nav("buy");
 }
-var closeSignin;
+
 closeSignin=()=>
 {
 	//close login screen 
 	document.getElementById("sign_page").style.marginLeft="100vw";
 }
-var openSignin;
+
 openSignin=()=>
 {
 	//open login screen
 	document.getElementById("sign_page").style.marginLeft="0vw";
 }
-var closeRegister;
+
 closeRegister=()=>
 {
 	//closes signup screen
 	document.getElementById("register_page").style.marginLeft="100vw";
 }
-var openRegister;
+
 openRegister=()=>
 {
 	//open signup screen
 	document.getElementById("register_page").style.marginLeft="0vw";
 }
-var closeTraders;
+
 closeTraders=()=>
 {
 	//closes list of traders
 	document.getElementById("select_trader").style.marginLeft="100vw";
 }
-var openTraders;
+
 openTraders=()=>
 {
 	//opens list of traders for selected item 
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
-var closeBooking;
+
 closeBooking=()=>
 {
 	//closes booking screen
 	document.getElementById("place_order").style.marginLeft="100vw";
 }
-var openBooking;
+
 openBooking=()=>
 {
 	//open booking screen
 	document.getElementById("place_order").style.marginLeft="0vw";
 }
-var loader;
+
 loader=(x)=>
 {
 	//used to prevent clicks when loading data from server / api.
@@ -129,7 +123,7 @@ loader=(x)=>
 	//call the fucntion loader(x) when needed.
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
-var increment;
+
 increment=(x)=>
 {
 	//increase price
@@ -139,7 +133,7 @@ increment=(x)=>
 	//return increment
 	document.getElementById(x).value=a+5;
 }
-var decrement;
+
 decrement=(x)=>
 {
 	//increase price
