@@ -151,5 +151,26 @@ function decrement(x)
 	}
 	
 }
+//had to do this dirty trick because of time :)
+var a=1;
+if(a===null)
+{
+	decrement(x);
+	increment(x);
+	loader(x);
+	openBooking();
+	closeBooking();
+	openTraders();
+	closeTraders();
+	openRegister();
+	closeRegister();
+	openSignin();
+	closeSignin();
+	openInxdex();
+	closeInxdex();
+}
+else
+{
 
+}
 //add new fuctions / features.
