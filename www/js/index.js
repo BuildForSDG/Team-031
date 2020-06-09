@@ -59,58 +59,69 @@ nav=(x)=>
             break;
 	}
 }
-var closeInxdex=()=>
+var closeInxdex;
+closeInxdex=()=>
 {
 	//closes index screen
 	document.getElementById("index_page").style.marginLeft="-100vw";
 }
-var openInxdex=()=>
+var openInxdex;
+openInxdex=()=>
 {
 	//index screen, to select opition to buy or sell prodect.
 	document.getElementById("index_page").style.marginLeft="0vw";
 	nav("buy");
 }
-var closeSignin=()=>
+var closeSignin;
+closeSignin=()=>
 {
 	//close login screen 
 	document.getElementById("sign_page").style.marginLeft="100vw";
 }
-var openSignin=()=>
+var openSignin;
+openSignin=()=>
 {
 	//open login screen
 	document.getElementById("sign_page").style.marginLeft="0vw";
 }
-var closeRegister=()=>
+var closeRegister;
+closeRegister=()=>
 {
 	//closes signup screen
 	document.getElementById("register_page").style.marginLeft="100vw";
 }
-var openRegister=()=>
+var openRegister;
+openRegister=()=>
 {
 	//open signup screen
 	document.getElementById("register_page").style.marginLeft="0vw";
 }
-var closeTraders=()=>
+var closeTraders;
+closeTraders=()=>
 {
 	//closes list of traders
 	document.getElementById("select_trader").style.marginLeft="100vw";
 }
-var openTraders=()=>
+var openTraders;
+openTraders=()=>
 {
 	//opens list of traders for selected item 
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
-var closeBooking=()=>
+var closeBooking;
+closeBooking=()=>
 {
 	//closes booking screen
 	document.getElementById("place_order").style.marginLeft="100vw";
 }
-var openBooking=()=>
+var openBooking;
+openBooking=()=>
 {
 	//open booking screen
 	document.getElementById("place_order").style.marginLeft="0vw";
 }
-var loader=(x)=>
+var loader;
+loader=(x)=>
 {
 	//used to prevent clicks when loading data from server / api.
 	//x = 0 (show).
@@ -118,7 +129,8 @@ var loader=(x)=>
 	//call the fucntion loader(x) when needed.
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
-var increment=(x)=>
+var increment;
+increment=(x)=>
 {
 	//increase price
 	var a=document.getElementById(x).value;
@@ -127,7 +139,8 @@ var increment=(x)=>
 	//return increment
 	document.getElementById(x).value=a+5;
 }
-var decrement=(x)=>
+var decrement;
+decrement=(x)=>
 {
 	//increase price
 	var a=document.getElementById(x).value;
