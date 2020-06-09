@@ -54,68 +54,68 @@ function nav(x)
 	}
 }
 
-closeInxdex=()=>
+function closeInxdex()
 {
 	//closes index screen
 	document.getElementById("index_page").style.marginLeft="-100vw";
 }
 
-openInxdex=()=>
+function openInxdex()
 {
 	//index screen, to select opition to buy or sell prodect.
 	document.getElementById("index_page").style.marginLeft="0vw";
 	nav("buy");
 }
 
-closeSignin=()=>
+function closeSignin()
 {
 	//close login screen 
 	document.getElementById("sign_page").style.marginLeft="100vw";
 }
 
-openSignin=()=>
+function openSignin()
 {
 	//open login screen
 	document.getElementById("sign_page").style.marginLeft="0vw";
 }
 
-closeRegister=()=>
+function closeRegister()
 {
 	//closes signup screen
 	document.getElementById("register_page").style.marginLeft="100vw";
 }
 
-openRegister=()=>
+function openRegister()
 {
 	//open signup screen
 	document.getElementById("register_page").style.marginLeft="0vw";
 }
 
-closeTraders=()=>
+function closeTraders()
 {
 	//closes list of traders
 	document.getElementById("select_trader").style.marginLeft="100vw";
 }
 
-openTraders=()=>
+function openTraders()
 {
 	//opens list of traders for selected item 
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
 
-closeBooking=()=>
+function closeBooking()
 {
 	//closes booking screen
 	document.getElementById("place_order").style.marginLeft="100vw";
 }
 
-openBooking=()=>
+function openBooking()
 {
 	//open booking screen
 	document.getElementById("place_order").style.marginLeft="0vw";
 }
 
-loader=(x)=>
+function loader(x)
 {
 	//used to prevent clicks when loading data from server / api.
 	//x = 0 (show).
@@ -124,7 +124,7 @@ loader=(x)=>
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
 
-increment=(x)=>
+function increment(x)
 {
 	//increase price
 	var a=document.getElementById(x).value;
@@ -134,7 +134,7 @@ increment=(x)=>
 	document.getElementById(x).value=a+5;
 }
 
-decrement=(x)=>
+function decrement(x)
 {
 	//increase price
 	var a=document.getElementById(x).value;
