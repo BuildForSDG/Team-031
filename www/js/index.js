@@ -59,68 +59,68 @@ nav=(x)=>
             break;
 	}
 }
-var closeInxdex;
+var closeInxdex=0;
 closeInxdex=()=>
 {
 	//closes index screen
 	document.getElementById("index_page").style.marginLeft="-100vw";
 }
-var openInxdex;
+var openInxdex=0;
 openInxdex=()=>
 {
 	//index screen, to select opition to buy or sell prodect.
 	document.getElementById("index_page").style.marginLeft="0vw";
 	nav("buy");
 }
-var closeSignin;
+var closeSignin=0;
 closeSignin=()=>
 {
 	//close login screen 
 	document.getElementById("sign_page").style.marginLeft="100vw";
 }
-var openSignin;
+var openSignin=0;
 openSignin=()=>
 {
 	//open login screen
 	document.getElementById("sign_page").style.marginLeft="0vw";
 }
-var closeRegister;
+var closeRegister=0;
 closeRegister=()=>
 {
 	//closes signup screen
 	document.getElementById("register_page").style.marginLeft="100vw";
 }
-var openRegister;
+var openRegister=0;
 openRegister=()=>
 {
 	//open signup screen
 	document.getElementById("register_page").style.marginLeft="0vw";
 }
-var closeTraders;
+var closeTraders=0;
 closeTraders=()=>
 {
 	//closes list of traders
 	document.getElementById("select_trader").style.marginLeft="100vw";
 }
-var openTraders;
+var openTraders=0;
 openTraders=()=>
 {
 	//opens list of traders for selected item 
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
-var closeBooking;
+var closeBooking=0;
 closeBooking=()=>
 {
 	//closes booking screen
 	document.getElementById("place_order").style.marginLeft="100vw";
 }
-var openBooking;
+var openBooking=0;
 openBooking=()=>
 {
 	//open booking screen
 	document.getElementById("place_order").style.marginLeft="0vw";
 }
-var loader;
+var loader=0;
 loader=(x)=>
 {
 	//used to prevent clicks when loading data from server / api.
@@ -129,7 +129,7 @@ loader=(x)=>
 	//call the fucntion loader(x) when needed.
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
-var increment;
+var increment=0;
 increment=(x)=>
 {
 	//increase price
@@ -139,7 +139,7 @@ increment=(x)=>
 	//return increment
 	document.getElementById(x).value=a+5;
 }
-var decrement;
+var decrement=0;
 decrement=(x)=>
 {
 	//increase price
