@@ -1,5 +1,5 @@
 
-nav=(x)=>
+function nav(x)
 {
 	//screen navigation controls.
 	switch(x)
