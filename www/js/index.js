@@ -59,69 +59,58 @@ nav=(x)=>
             break;
 	}
 }
-var closeInxdex=0;
-closeInxdex=()=>
+var closeInxdex=()=>
 {
 	//closes index screen
 	document.getElementById("index_page").style.marginLeft="-100vw";
 }
-var openInxdex=0;
-openInxdex=()=>
+var openInxdex=()=>
 {
 	//index screen, to select opition to buy or sell prodect.
 	document.getElementById("index_page").style.marginLeft="0vw";
 	nav("buy");
 }
-var closeSignin=0;
-closeSignin=()=>
+var closeSignin=()=>
 {
 	//close login screen 
 	document.getElementById("sign_page").style.marginLeft="100vw";
 }
-var openSignin=0;
-openSignin=()=>
+var openSignin=()=>
 {
 	//open login screen
 	document.getElementById("sign_page").style.marginLeft="0vw";
 }
-var closeRegister=0;
-closeRegister=()=>
+var closeRegister=()=>
 {
 	//closes signup screen
 	document.getElementById("register_page").style.marginLeft="100vw";
 }
-var openRegister=0;
-openRegister=()=>
+var openRegister=()=>
 {
 	//open signup screen
 	document.getElementById("register_page").style.marginLeft="0vw";
 }
-var closeTraders=0;
-closeTraders=()=>
+var closeTraders=()=>
 {
 	//closes list of traders
 	document.getElementById("select_trader").style.marginLeft="100vw";
 }
-var openTraders=0;
-openTraders=()=>
+var openTraders=()=>
 {
 	//opens list of traders for selected item 
 	document.getElementById("select_trader").style.marginLeft="0vw";
 }
-var closeBooking=0;
-closeBooking=()=>
+var closeBooking=()=>
 {
 	//closes booking screen
 	document.getElementById("place_order").style.marginLeft="100vw";
 }
-var openBooking=0;
-openBooking=()=>
+var openBooking=()=>
 {
 	//open booking screen
 	document.getElementById("place_order").style.marginLeft="0vw";
 }
-var loader=0;
-loader=(x)=>
+var loader=(x)=>
 {
 	//used to prevent clicks when loading data from server / api.
 	//x = 0 (show).
@@ -129,8 +118,7 @@ loader=(x)=>
 	//call the fucntion loader(x) when needed.
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
-var increment=0;
-increment=(x)=>
+var increment=(x)=>
 {
 	//increase price
 	var a=document.getElementById(x).value;
@@ -139,8 +127,7 @@ increment=(x)=>
 	//return increment
 	document.getElementById(x).value=a+5;
 }
-var decrement=0;
-decrement=(x)=>
+var decrement=(x)=>
 {
 	//increase price
 	var a=document.getElementById(x).value;
