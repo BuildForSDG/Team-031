@@ -112,7 +112,7 @@ body {
 
 .menu_box_text {
   font-size: 3.5vw;
-  margin: 0vh;
+  margin: 0;
   color: #999;
 }
 
@@ -132,7 +132,7 @@ body {
   background: #4b72d1;
   text-align: center;
   outline: none;
-  border:none;
+  border: none;
   font-size: 3vw;
   color: #fff;
   border-radius: 10vw;
@@ -189,6 +189,7 @@ body {
   width: 96vw;
   height: auto;
   background: none;
+
   /* padding: 2vw; */
   font-size: 3vw;
   display: flex;
@@ -243,7 +244,7 @@ body {
   color: #aaa;
   text-transform: lowercase;
   padding: 0.5vw;
-  margin: 0vw
+  margin: 0;
 }
 
 .full_page {
@@ -261,21 +262,21 @@ body {
 }
 
 #place_order {
-  z-index: 102; 
+  z-index: 102;
   margin-left: 100vw;
 }
 
 #index_page {
-  z-index: 200; 
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;  
+  background: #fff;
 }
 
 #register_page {
-  z-index: 202; 
+  z-index: 202;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -285,7 +286,7 @@ body {
 }
 
 #sign_page {
-  z-index: 201; 
+  z-index: 201;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -296,7 +297,7 @@ body {
 }
 
 #loading_page {
-  z-index: 100; 
+  z-index: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -359,7 +360,7 @@ body {
   align-items: center;
   flex-direction: column;
   border-bottom: solid 0.5vw #eee;
-  margin:1vw;
+  margin: 1vw;
 }
 
 .icon_btn {
@@ -390,7 +391,7 @@ body {
   font-size: 3.5vw;
   text-transform: lowercase;
   padding: 0.5vw;
-  margin: 0vw;
+  margin: 0;
 }
 
 .input_ {
