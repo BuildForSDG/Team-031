@@ -223,7 +223,7 @@ export default{
   },
   editProduct: (req, res) => {
     const name = req.body.name, unit = req.body.unit, quantity = 
-    parseInt(req.body.quantity), price = req.body.price, farmerid = 
+    parseInt(req.body.quantity,10), price = req.body.price, farmerid = 
     req.cookies.farmerid, farmer = req.body.farmer, location = req.body.location;
     // get old quantity
     FarmerStock.findOne({_id: req.params.id}).then(
@@ -299,11 +299,10 @@ export default{
       .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
   },
   deleteStock: (req, res) => {
-    FarmerStock.deleteMany().then(
-        result => {
+    FarmerStock.deleteMany().then( () => {
             res.status(200).json({status: 'success', message: 'Stock sucessfuly deleted'});
-          }
-      )
-      .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
+        }
+    )
+    .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
   }
 }
