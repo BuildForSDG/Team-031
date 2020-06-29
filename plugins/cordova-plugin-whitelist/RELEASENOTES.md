@@ -1,4 +1,4 @@
-<!-- 
+<!--
 #
 # Licensed to the Apache Software Foundation (ASF) under one
 # or more contributor license agreements.  See the NOTICE file
@@ -18,7 +18,6 @@
 # under the License.
 #
 -->
-<!--
 # Release Notes
 
 ### 1.3.4 (Jun 19, 2019)
@@ -86,4 +85,3 @@
 * Change ID to cordova-plugin-whitelist rather than reverse-DNS-style
 * Tweak CSP examples in README
 * [CB-8660](https://issues.apache.org/jira/browse/CB-8660) remove extra commas from package.json
- -->

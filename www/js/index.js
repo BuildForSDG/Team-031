@@ -639,7 +639,8 @@ orderProduct = () => {
 var inits;
 inits=()=>
 {
-	if(true)
+	var x=1
+	if(x===1)
 	{
 		//alert("hello");
 	}
