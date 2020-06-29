@@ -80,5 +80,10 @@
     "rotating-file-stream": "^2.1.1",
     "simple-node-logger": "^18.12.24",
     "supertest": "^4.0.2"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {}
+    }
   }
 }

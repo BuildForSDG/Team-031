@@ -21,7 +21,7 @@ description: Whitelist external content accessible by your app.
 #         under the License.
 -->
 
-# cordova-plugin-whitelist
+<!-- # cordova-plugin-whitelist
 
 This plugin implements a whitelist policy for navigating the application webview on Cordova 4.0
 
@@ -43,7 +43,7 @@ $ cordova prepare
 Controls which URLs the WebView itself can be navigated to. Applies to
 top-level navigations only.
 
-By default navigations are only allowed to `file://` URLs. To allow others URLs, you must add `<allow-navigation>` tags to your `config.xml`:
+By default navigations are only allowed to `file://` URLs. To allow others URLs, you must add `<allow-navigation>` tags to your `config.xml`: -->
 
     <!-- Allow links to example.com -->
     <allow-navigation href="http://example.com/*" />
@@ -62,13 +62,13 @@ By default navigations are only allowed to `file://` URLs. To allow others URLs,
     <allow-navigation href="https://*/*" />
     <allow-navigation href="data:*" />
 
-Quirks: on Android it also applies to iframes for non-http(s) schemes.
+<!-- Quirks: on Android it also applies to iframes for non-http(s) schemes.
 
 ## Intent Whitelist
 
 Controls which URLs the app is allowed to ask the system to open.
 
-In `config.xml`, add `<allow-intent>` tags, like this:
+In `config.xml`, add `<allow-intent>` tags, like this: -->
 
     <!-- Allow links to web pages to open in a browser -->
     <allow-intent href="http://*/*" />
@@ -94,7 +94,7 @@ In `config.xml`, add `<allow-intent>` tags, like this:
          *NOT RECOMMENDED* -->
     <allow-intent href="*" />
 
-Without any `<allow-intent>` tags, no requests to external URLs are allowed. However, the default Cordova application includes a quite liberal set of `allow-intent` entries by default. It is advised to narrow this down based on each app's needs.
+<!-- Without any `<allow-intent>` tags, no requests to external URLs are allowed. However, the default Cordova application includes a quite liberal set of `allow-intent` entries by default. It is advised to narrow this down based on each app's needs.
 
 On Android, this equates to sending an intent of type BROWSEABLE.
 
@@ -108,7 +108,7 @@ Controls which network requests (images, XHRs, etc) are allowed to be made (via 
 
 Note: We suggest you use a Content Security Policy (see below), which is more secure.  This whitelist is mostly historical for webviews which do not support CSP.
 
-In `config.xml`, add `<access>` tags, like this:
+In `config.xml`, add `<access>` tags, like this: -->
 
     <!-- Allow images, xhrs, etc. to google.com -->
     <access origin="http://google.com" />
@@ -126,7 +126,7 @@ In `config.xml`, add `<access>` tags, like this:
     <!-- Don't block any requests -->
     <access origin="*" />
 
-Without any `<access>` tags, only requests to `file://` URLs are allowed. However, the default Cordova application includes `<access origin="*">` by default.
+<!-- Without any `<access>` tags, only requests to `file://` URLs are allowed. However, the default Cordova application includes `<access origin="*">` by default.
 
 Note: Whitelist cannot block network redirects from a whitelisted remote website (i.e. http or https) to a non-whitelisted website. Use CSP rules to mitigate redirects to non-whitelisted websites for webviews that support CSP.
 
@@ -140,7 +140,7 @@ On Android and iOS, the network request whitelist (see above) is not able to fil
 
 On Android, support for CSP within the system webview starts with KitKat (but is available on all versions using Crosswalk WebView).
 
-Here are some example CSP declarations for your `.html` pages:
+Here are some example CSP declarations for your `.html` pages: -->
 
     <!-- Good default declaration:
         * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication

@@ -19,7 +19,7 @@
 #
 -->
 
-# Contributing to Apache Cordova
+<!-- # Contributing to Apache Cordova
 
 Anyone can contribute to Cordova. And we need your contributions.
 
@@ -34,4 +34,4 @@ The details are explained there, but the important items are:
  - Have a Jira issue open that corresponds to your contribution.
  - Run the tests so your patch doesn't break existing functionality.
 
-We look forward to your contributions!
+We look forward to your contributions! -->
