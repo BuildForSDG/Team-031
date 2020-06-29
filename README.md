@@ -1,6 +1,7 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2d0fcedfa6c04e28b02722ca79c65a03)](https://www.codacy.com/gh/BuildForSDG/Team-031?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BuildForSDG/Team-031&amp;utm_campaign=Badge_Grade)
 # ZeroHunger
-# Team-031
+### Team-031
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/2d0fcedfa6c04e28b02722ca79c65a03)](https://www.codacy.com/gh/BuildForSDG/Team-031?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BuildForSDG/Team-031&amp;utm_campaign=Badge_Grade)
+
  Goal 2 aims to end hunger and malnutrition by 2030, and to ensure access to safe, nutritious and sufficient food. 
  Our planet has provided us with tremendous resources, but unequal access and inefficient handling leaves millions of people malnourished. 
  If we promote sustainable agriculture with modern technologies and fair distribution systems, we can help sustain the whole world’s population and help make sure that nobody will ever suffer from hunger again. 
