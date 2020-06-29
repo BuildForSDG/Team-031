@@ -664,5 +664,5 @@ inits=()=>
 		loadTraders();
 		orderProduct();
 	}
-	
 }
+inits
