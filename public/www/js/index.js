@@ -1,9 +1,9 @@
-/*var Team = {
+var Team = {
     name:"Team-031",
     project:"Zero Hunger",
-    solution:"A price controlled online market (Farm Food)",
+    solution:"Unknown",
     members:9,
-};*/
+};
 var nav;
 nav=(x)=>
 {
@@ -219,7 +219,6 @@ login = () => {
 		url: url,
 		body: { email: email, password: password },
 	}
-	console.log(parameter);
 	const body = { email: email, password: password };
 	signin_btn.textContent = 'signing in...';
 	axios.post(url, body, {credentials: 'include'}).then(response => {
@@ -300,12 +299,12 @@ loadStore = () => {
 		  url: 'https://zero-hunger.herokuapp.com/api/v1/farmer/products',
 		  method: 'get',
 		  headers: {
-		  	cookies: `farmerid=${sessionStorage.getItem('farmerid')}; token=${sessionStorage.getItem('token')}`
+			  cookies: `farmerid=${sessionStorage.getItem('farmerid')}; token=${sessionStorage.getItem('token')}`
 		  }
 	};
 	header.textContent = 'Loading products...'
 	// checking for cookies
-	//console.log('cookies', document.cookie);
+	console.log('cookies', document.cookie);
 	axios.request(requestOptions)
 	.then( response => {
 		let content = '';
@@ -316,7 +315,7 @@ loadStore = () => {
 					const deleteOptions = {
 						url: `https://zero-hunger.herokuapp.com/api/v1/farmer/${product.farmer_id}/product/${product.product_name}/delete`,
 						method: 'delete',
-				};
+				  };
 					axios.request(deleteOptions).then().catch(error => alert(error))
 				}
 				const child = `<div class="content_box">
@@ -337,7 +336,7 @@ loadStore = () => {
 	})
 	.catch(error => alert(error))
 }
-var tempName;
+
 var loadSellProducts;
 loadSellProducts = () => {
 	const header = document.querySelector('#sell_header');
@@ -407,7 +406,7 @@ addStore = (event) => {
 		headers: {
 			cookies: `farmerid=${sessionStorage.getItem('farmerid')}; token=${sessionStorage.getItem('token')}`
 		}
-	};
+	  };
 	  const postOptions = {
 		url: 'https://zero-hunger.herokuapp.com/api/v1/farmer/product/add',
 		method: 'post',
@@ -416,9 +415,8 @@ addStore = (event) => {
 	} 
 	
 	axios.request(requestOptions)
-  	.then(
-  		response => {
-  		const myStock = response.data.stock;
+  	.then( response => {
+		const myStock = response.data.stock;
 		if (myStock.length > 0) {
 			for(let i=0; i<myStock.length; i++) {
 				if(myStock[i].product_name === item_name){	
@@ -635,34 +633,4 @@ orderProduct = () => {
 		alert (error);
 		order_btn.textContent = 'Order';
 	})
-}
-var inits;
-inits=()=>
-{
-	if(true)
-	{
-		//alert("hello");
-	}
-	else
-	{
-		closexIndex();
-		openxIndex();
-		closeSignin();
-		closeRegister();
-		openRegister();
-		closeTraders();
-		closeBooking();
-		openBooking();
-		loader();
-		increment();
-		decrement();
-		login();
-		register();
-		addStore();
-		openUpdatePage();
-		updateProduct();
-		loadTraders();
-		orderProduct();
-	}
-	
 }

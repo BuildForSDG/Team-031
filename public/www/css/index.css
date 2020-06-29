@@ -1,17 +1,15 @@
 /*
-for web,
+for mobile
 delete all classes except Body{} and *{}, they can be modified.
  */
 * {
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
 body {
-  -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-  -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-  -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+  -webkit-touch-callout: none;        /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;       /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;          /* prevent copy paste, to allow, change 'none' to 'text' */
   background-color: #fff;
   font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
   font-size: 14px;
@@ -38,22 +36,22 @@ body {
 }
 
 .welcome_image {
-  width: 10vw;
-  height: 10vw;
+  width: 45vw;
+  height: 45vw;
 }
 
 .welcome_header {
-  font-size: 1vw;
+  font-size: 5vw;
   text-transform: uppercase;
 }
 
 .welcome_sub {
-  font-size: 1.2vw;
+  font-size: 3vw;
   color: #777;
 }
 
 .welcome_sub_detail {
-  font-size: 0.8vw;
+  font-size: 2.5vw;
   color: #999;
 }
 
@@ -65,11 +63,12 @@ body {
   position: fixed;
   padding: 0;
   margin: 0;
+
 }
 
 .header {
-  width: 100%;
-  height: 7vh;
+  width: 100vw;
+  height: 6vh;
   padding-top: 1vh;
   padding-bottom: 1vh;
   background: #73d14b;
@@ -77,27 +76,25 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  margin-left: 2.1vw;
 }
 
 .container_header {
-  width: 6vw;
-  height: 100vh;
+  width: 100vw;
+  height: 6vh;
   background: #fff;
   position: fixed;
   padding-top: 1vh;
   padding-bottom: 1vh;
   border-top: solid 0.1vh #eee;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
   bottom: 0;
 }
 
 .menu_box {
-  width: 6vw;
-  height: 6vh;
+  width: 20vw;
+  height: 7vh;
   background: none;
   display: flex;
   justify-content: center;
@@ -105,23 +102,23 @@ body {
   flex-direction: column;
   border-bottom: none;
   transition: border 0.1s;
-  padding: 1vh 0;
 }
 
 .menu_box_icon {
-  width: 4vw;
-  height: 3vh;
+  width: 8vw;
+  height: 4vh;
+
 }
 
 .menu_box_text {
-  font-size: 1vw;
-  margin-top: 1vh;
+  font-size: 3.5vw;
+  margin: 0vh;
   color: #999;
 }
 
 .container {
-  width: 96vw;
-  height: 93vh;
+  width: 100vw;
+  height: 84vh;
   background: #f3f3f3;
   position: fixed;
   right: 0;
@@ -129,16 +126,17 @@ body {
 }
 
 .btn {
-  width: 10vw;
+  width: 35vw;
   min-height: 5vh;
-  padding: 1vw;
+  padding: 2vw;
   background: #4b72d1;
   text-align: center;
   outline: none;
-  border: none;
-  font-size: 0.8vw;
+  border:none;
+  font-size: 3vw;
   color: #fff;
   border-radius: 10vw;
+  transition: opacity 0.1s;
   margin-top: 4vw;
 }
 
@@ -147,18 +145,18 @@ body {
 }
 
 .btn_larger {
-  width: 15vw;
+  width: 40vw;
   min-height: 6vh;
-  padding: 1.5vw;
+  padding: 2vw;
   background: #4b72d1;
   text-align: center;
   outline: none;
-  border: none;
-  font-size: 0.8vw;
+  border:none;
+  font-size: 3vw;
   color: #fff;
   border-radius: 10vw;
   transition: opacity 0.1s;
-  margin: 1vw;
+  margin: 2vw;
 }
 
 .btn_larger:active {
@@ -166,25 +164,25 @@ body {
 }
 
 .logo {
-  width: 5vw;
-  height: 5vw;
-  border-radius: 1.2vw;
+  width: 15vw;
+  height: 15vw;
+  border-radius: 4vw;
 }
 
 .item_image {
-  width: 3.5vw;
-  height: 3.5vw;
+  width: 15vw;
+  height: 15vw;
 }
 
 .content_list {
-  width: 90vw;
+  width: 96vw;
   height: auto;
   background: none;
   padding: 2vw;
   font-size: 3vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: start;
   flex-wrap: wrap;
 }
 
@@ -192,7 +190,6 @@ body {
   width: 96vw;
   height: auto;
   background: none;
-
   /* padding: 2vw; */
   font-size: 3vw;
   display: flex;
@@ -203,8 +200,8 @@ body {
 }
 
 .content_box {
-  width: 14vw;
-  min-height: 14vw;
+  width: 45vw;
+  min-height: 25vh;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -213,14 +210,13 @@ body {
   border-bottom: solid 0.5vw #eee;
   margin: 1vw;
   border-radius: 1vh;
-  padding: 1vw;
   padding-top: 4vw;
   padding-bottom: 4vw;
 }
 
 .content_box_large {
-  width: 43vw;
-  min-height: 50vh;
+  width: 98vw;
+  min-height: 40vh;
   background: #fff;
   display: flex;
   justify-content: center;
@@ -234,26 +230,25 @@ body {
 }
 
 .title_bright {
-  font-size: 1vw;
+  font-size: 4vw;
   color: #aaa;
   text-transform: uppercase;
   padding: 2vw;
-  margin-left: 1vw;
 }
 
 .title_small {
-  font-size: 1vw;
+  font-size: 3.5vw;
   color: #666;
   text-transform: uppercase;
-  padding: 0.5vw;
+  padding: 2vw;
 }
 
 .sub_title {
-  font-size: 1vw;
+  font-size: 3vw;
   color: #aaa;
   text-transform: lowercase;
   padding: 0.5vw;
-  margin: 0;
+  margin: 0vw
 }
 
 .full_page {
@@ -271,21 +266,21 @@ body {
 }
 
 #place_order {
-  z-index: 102;
+  z-index: 102; 
   margin-left: 100vw;
 }
 
 #index_page {
-  z-index: 200;
+  z-index: 200; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+  background: #fff;  
 }
 
 #register_page {
-  z-index: 202;
+  z-index: 202; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -295,27 +290,29 @@ body {
 }
 
 #sign_page {
-  z-index: 201;
+  z-index: 201; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: #fff;
   margin-left: 100vw;
+  
 }
 
 #loading_page {
-  z-index: 100;
+  z-index: 100; 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: #fff;
   margin-left: 100vw;
+  
 }
 
 .full_page_header {
-  width: 99vw;
+  width: 98vw;
   height: 6vh;
   padding: 1vh;
   background: #fff;
@@ -341,7 +338,7 @@ body {
   font-size: 3vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 
@@ -359,27 +356,27 @@ body {
 }
 
 .content_box_sellers {
-  width: 14vw;
-  height: 14vw;
+  width: 45vw;
+  height: 25vh;
   background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border-bottom: solid 0.5vw #eee;
-  margin: 1vw;
+  margin:1vw;
   padding-top: 2vw;
   padding-bottom: 2vw;
 }
 
 .icon_btn {
-  width: 2vw;
-  height: 2vw;
+  width: 7vw;
+  height: 7vw;
 }
 
 .pro_pic {
-  width: 1vw;
-  height: 1vw;
+  width: 15vw;
+  height: 15vw;
   background: #72d14b;
   color: #fff;
   text-align: center;
@@ -388,27 +385,26 @@ body {
   align-items: center;
   text-transform: uppercase;
   border-radius: 10vw;
-  font-size: 1vw;
-  padding: 1vw;
+  
 }
 
 .large_image {
-  width: 4vw;
-  height: 4vw;
+  width: 25vw;
+  height: 25vw;
 }
 
 .complement_three {
   color: #d14b72;
-  font-size: 1vw;
+  font-size: 3.5vw;
   text-transform: lowercase;
   padding: 0.5vw;
-  margin: 0;
+  margin: 0vw;
 }
 
 .input_ {
-  width: 25vw;
-  height: 1vh;
-  padding: 1.5vw;
+  width: 60vw;
+  height: 4vh;
+  padding: 2vw;
   margin: 2vh;
   text-align: center;
   font-size: 3vw;
@@ -418,23 +414,20 @@ body {
   justify-content: space-around;
   align-items: center;
   background: #fff;
-  border-radius: 0.5vw;
-  border-bottom: solid #eee 0.02vw;
+  border-radius: 1vw;
+  border-bottom: solid #eee 0.2vw;
 }
 
 .input_ img {
-  width: 2vw;
-  height: 2vw;
-  margin-top: -0.5vw;
+  width: 8vw;
+  height: 8vw;
 }
 
-.input_ input,
-.input_ select {
+.input_ input, .input_ select {
   outline: none;
   border: none;
-  font-size: 1vw;
+  font-size: 3vw;
   text-align: center;
-  width: 20vw;
 }
 
 .fancy_form {
@@ -444,8 +437,8 @@ body {
 }
 
 .store_head {
-  width: 100%;
-  height: 40vh;
+  width: 100vw;
+  height: 30vh;
   background: #72d14b;
   display: flex;
   flex-direction: column;
