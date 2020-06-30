@@ -34,7 +34,7 @@ export default{
                 token: token,
                 userData
             })
-                sendEmail(userData.email);
+                sendEmail(userData.email, 'Your accout is succesfully created at Zero Hunger');
         })
         .catch((error) => {
                     res.status(400).json({
@@ -162,8 +162,8 @@ export default{
 	);
   },
   addProduct: (req, res) => {
-    const name = req.body.name, unit = req.body.unit, quantity =
-    req.body.quantity, price = req.body.price, farmer = req.body.farmer, location = req.body.location;
+    const name = req.body.name, unit = req.body.unit, quantity = req.body.quantity, price =
+    req.body.price, farmer = req.body.farmer, location = req.body.location;
     const farmerid = req.cookies.farmerid;
     const stock = new FarmerStock({
         farmer_id: req.cookies.farmerid,
@@ -223,7 +223,7 @@ export default{
   },
   editProduct: (req, res) => {
     const name = req.body.name, unit = req.body.unit, quantity = 
-    parseInt(req.body.quantity,10), price = req.body.price, farmerid = 
+    parseInt(req.body.quantity), price = req.body.price, farmerid = 
     req.cookies.farmerid, farmer = req.body.farmer, location = req.body.location;
     // get old quantity
     FarmerStock.findOne({_id: req.params.id}).then(
@@ -298,11 +298,21 @@ export default{
       )
       .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
   },
+  getEmail: (req, res) => {
+    Farmer.findOne({_id: req.params.farmerid}).then(
+        result => {
+            console.log(result);
+            res.status(200).json({status: 'success', email: result.email});
+          }
+      )
+      .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
+  },
   deleteStock: (req, res) => {
-    FarmerStock.deleteMany().then( () => {
+    FarmerStock.deleteMany().then(
+        result => {
             res.status(200).json({status: 'success', message: 'Stock sucessfuly deleted'});
-        }
-    )
-    .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
+          }
+      )
+      .catch(error => res.status(400).json({status: 'Failed', message: error.message }));
   }
 }

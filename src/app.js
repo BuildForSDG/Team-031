@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan('dev'));
 // setting up static page
-app.use(express.static('/www'));
+app.use(express.static(__dirname + '/www'));
 // setup the logger
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms', { stream: requestLogStream }));
 connectDB();
