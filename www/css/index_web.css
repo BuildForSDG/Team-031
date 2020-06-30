@@ -264,7 +264,24 @@ body {
   z-index: 100;
   transition: margin 0.5s;
 }
-
+.alert_page {
+  width: 100vw;
+  min-height: 20vh;
+  background: none;
+  position: fixed;
+  z-index: 100;
+  transition: margin 1s;
+  bottom: -100vh;
+}
+#alert_page {
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  margin-left: 0vw;
+}
 #select_trader {
   z-index: 101;
   margin-left: 100vw;

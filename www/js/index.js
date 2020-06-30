@@ -149,6 +149,24 @@ loader=(x)=>
 	//call the fucntion loader(x) when needed.
 	document.getElementById("loading_page").style.marginLeft=x+"vw";
 }
+var alert;
+alert=(x)=>
+{
+	//custom alert
+	document.getElementById("alert_text").innerHTML=x;
+	document.getElementById("alert_page").style.bottom="0";
+	loader(0);
+
+}
+var hideAlert;
+hideAlert=()=>
+{
+	//custom alert
+	document.getElementById("alert_text").innerHTML="";
+	document.getElementById("alert_page").style.bottom="-100vh";
+	loader(100);
+
+}
 var increment;
 increment=(x)=>
 {
@@ -320,7 +338,7 @@ loadStore = () => {
 					axios.request(deleteOptions).then().catch(error => alert(error))
 				}
 				const child = `<div class="content_box">
-				<img src="img/food/tomato.png" class="item_image">
+				<img src="img/food/${tempName}.png" class="item_image">
 				<h2 class="title_small" id="${lower_name}_name">${product.product_name}</h2>
 				<h3 class="sub_title" id="${lower_name}_price">price &#8358;${product.price}</h3>
 				<h3 class="sub_title" id="${lower_name}_qty_unit">${product.quantity} ${product.unit}</h3>
@@ -350,7 +368,7 @@ loadSellProducts = () => {
 			tempName = item.name.replace(' ','').toLowerCase();
 			content += `
 			<div class="content_box_large">
-			<img src="img/food/tomato.png" class="item_image">
+			<img src="img/food/${tempName}.png" class="item_image">
 			<h2 class="title_small" id="${tempName}">${item.name}</h2>
 			<p class="sub_title" style="text-transform: none;">Recomended price &#8358;{unknown}</p>
 			<div class="input_" >
@@ -458,7 +476,7 @@ openUpdatePage = () =>
 	const container = document.getElementById('product_update_form');
 	const content = `
 	<div class="content_box_large">
-	<img src="img/food/tomato.png" class="item_image">
+	<img src="img/food/${tempName}.png" class="item_image">
 	<h2 class="title_small" id="${input_name}_update">${name}</h2>
 	<p class="sub_title">recomended price &#8358;50</p>
 	<div class="input_">
@@ -548,9 +566,10 @@ loadBuy = () => {
 		const container = document.getElementById('product_selection_list');
 		let content = '';
 		result.data.map( product => {
+			tempName = product.name.replace(' ','').toLowerCase();
 			content += `
 			<div class="content_box">
-                    <img src="img/food/tomato.png" class="item_image">
+                    <img src="img/food/${tempName}.png" class="item_image">
                     <h2 class="title_small">${product.name}</h2>
                     <button class="btn" id="${product.name}" onclick=loadTraders(event)>select</button>
             </div>`;
@@ -642,10 +661,11 @@ inits=()=>
 	var x=1
 	if(x===1)
 	{
-		//alert("hello");
+		return 0;
 	}
 	else
 	{
+		//list of all functions
 		closexIndex();
 		openxIndex();
 		closeSignin();
@@ -654,7 +674,7 @@ inits=()=>
 		closeTraders();
 		closeBooking();
 		openBooking();
-		loader();
+		hideAlert();
 		increment();
 		decrement();
 		login();
@@ -666,4 +686,4 @@ inits=()=>
 		orderProduct();
 	}
 }
-inits
+inits();

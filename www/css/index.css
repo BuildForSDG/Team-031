@@ -257,6 +257,15 @@ body {
   z-index: 100;
   transition: margin 0.5s;
 }
+.alert_page {
+  width: 100vw;
+  min-height: 20vh;
+  background: none;
+  position: fixed;
+  z-index: 100;
+  transition: margin 1s;
+  bottom: -100vh;
+}
 
 #select_trader {
   z-index: 101;
@@ -305,6 +314,15 @@ body {
   flex-direction: column;
   background: #fff;
   margin-left: 100vw;
+}
+#alert_page {
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: none;
+  margin-left: 0vw;
 }
 
 .full_page_header {
